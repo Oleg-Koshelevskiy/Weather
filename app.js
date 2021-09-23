@@ -8,10 +8,10 @@ fetch(
     city.innerHTML = "Поточне розташування: " + data.name;
 
     let temp = document.querySelector(".temp");
-    temp.innerHTML = "Температура: " + data.main.temp + " &#176C";
+    temp.innerHTML = "Температура: " + Math.round(data.main.temp) + " &#176C";
     let tempFeelsLike = document.querySelector(".temp-feels-like");
     tempFeelsLike.innerHTML =
-      "Відчувається як: " + data.main.feels_like + " &#176C";
+      "Відчувається як: " + Math.round(data.main.feels_like) + " &#176C";
     let pressure = document.querySelector(".pressure");
     pressure.innerHTML = "Тиск: " + data.main.pressure + " hPa";
     let description = document.querySelector(".description");
@@ -19,7 +19,8 @@ fetch(
     let humidity = document.querySelector(".humidity");
     humidity.innerHTML = "Вологість: " + data.main.humidity + "%";
     let speed = document.querySelector(".speed");
-    speed.innerHTML = "Швидкість вітру: " + data.wind.speed + " м/с";
+    speed.innerHTML =
+      "Швидкість вітру: " + Math.round(data.wind.speed) + " м/с";
     let deg = document.querySelector(".deg");
     deg.innerHTML = "Напрям вітру: " + data.wind.deg + " &#176";
     let icon = document.querySelector(".icon");
